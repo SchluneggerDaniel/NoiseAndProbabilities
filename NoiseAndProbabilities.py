@@ -99,8 +99,6 @@ def experiment_update(filename):
     # Trial number / order / counters:
 
     # Import csv file (now with relative path)
-    # df = pd.read_csv('/Users/danielschlunegger/Dropbox/Atom
-    # /NoiseAndProbabilities/SeqForPython.csv')
     path = os.path.join(_thisDir, "SeqForPython.csv")
     with open(path) as f:
         df = pd.read_csv(f)

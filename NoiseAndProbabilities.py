@@ -103,23 +103,23 @@ def experiment_update(filename):
     with open(path) as f:
         df = pd.read_csv(f)
 
-    # If Condition == '1', import stochastic, etc.
+    # If Condition == '1', import different sequences etc.
     if expInfo['Condition'] == '1':
-        order = array.array('i', df["seqFullyStochastic"])
-        intensities = array.array('i', df["intensityStochastic"])
-        print("Stochastic")
+        order = array.array('i', df["seqCond1"])
+        intensities = array.array('i', df["intensityCond1"])
+        print("Condition 1")
     elif expInfo['Condition'] == '2':
-        order = array.array('i', df["seqFrequency"])
-        intensities = array.array('i', df["intensityFrequency"])
-        print("Frequency")
+        order = array.array('i', df["seqCond2"])
+        intensities = array.array('i', df["intensityCond2"])
+        print("Condition 2")
     elif expInfo['Condition'] == '3':
-        order = array.array('i', df["seqRepetition"])
-        intensities = array.array('i', df["intensityRepetition"])
-        print("Repetition")
+        order = array.array('i', df["seqCond3"])
+        intensities = array.array('i', df["intensityCond3"])
+        print("Condition 3")
     elif expInfo['Condition'] == '4':
-        order = array.array('i', df["seqAlternation"])
-        intensities = array.array('i', df["intensityAlternation"])
-        print("Alternation")
+        order = array.array('i', df["seqCond4"])
+        intensities = array.array('i', df["intensityCond4"])
+        print("Condition 4")
 
     # Intensities: The closer to one, the more signal
     orderMetric = intensities
@@ -169,7 +169,7 @@ def experiment_update(filename):
         orderIndex = order[i]
         update_orderIndex = orderIndex
 
-        # Intensity something is wrong here
+        # Intensity 
         orderMetricIndex = orderMetric[i]
         updated_orderMetricIndex = orderMetricIndex
         print("DEBUG updated_orderMetricIndex")
